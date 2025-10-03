@@ -1,14 +1,3 @@
-#@@@@@ERRORS SO FAR - image.load & diplay.set_mode
-#pygame.event.get()
-#screen.blit
-#event.key (not type as we r letting uder press key and checking that) & forgot to add_change - playerX_change  
-#didn't create the variable palerX_change
-#didn't call the cotcan function because of which the cotcan image wasn't showing
-#forgot to add screen.blit 
-#it's not random.randinit but random.randint
-# forgot to add comma in screen.blit(cotcanImg, <-this comma here (x,y))
-# removed players y movements
-
 import pygame
 import math
 import random
@@ -90,17 +79,6 @@ for i in range(num_of_candy):
 def cotcan(x, y, i):
     screen.blit(cotcanImg[i], (x, y))
 
-#---------------COTTON CANDY IMAGE 2---------------
-# cotcan2Img = pygame.image.load('cotcan2.png')
-# #position
-# cotcan2X = random.randint(0,800)
-# cotcan2Y = random.randint(50, 140)
-# cotcan2X_change = 0.13
-# cotcan2Y_change = 40
-
-# def cotcan2(x,y):
-#     screen.blit(cotcan2Img, (x, y))#helps us to draw something on screen like this image
-
 def fire_bowl(x,y):
     global bowl_state
     bowl_state = "fire"
@@ -163,14 +141,6 @@ while running:
     elif playerX >= 736: #800-64
         playerX = 736
 
-    # playerY += playerY_change
-    # if playerY <= 350:
-    #     playerY = 350
-    # elif playerY >= 520: # 600-64
-    #     playerY = 520
-
-
-#cotton candy 1 movement
     for i in range(num_of_candy):
 
         #game over
@@ -199,17 +169,9 @@ while running:
             cotcanX[i] = random.randint(0 , 750)
             cotcanY[i] = random.randint(20, 160)
 
-        cotcan(cotcanX[i], cotcanY[i], i)
+        cotcan(cotcanX[i], cotcanY[i], i)    
 
-#cotton candy 2 movement
-    # cotcan2X += cotcan2X_change
-    # if cotcan2X <= 0: 
-    #     cotcan2X_change = 0.3
-    #     cotcan2Y += cotcan2Y_change
-    # elif cotcan2X >= 736: #800-64
-    #     cotcan2X_change = -0.3
-    #     cotcan2Y += cotcan2Y_change
-    
+
     #bullet Movement
     if bowlY <= 0:
         bowlY = 470
